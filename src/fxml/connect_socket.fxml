@@ -10,73 +10,73 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ConnectController">
-   <center>
-      <VBox prefHeight="365.0" prefWidth="439.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox prefHeight="100.0" prefWidth="445.0">
-               <children>
-                  <VBox id="label" prefHeight="100.0" prefWidth="62.0">
-                     <children>
-                        <Label prefHeight="39.0" prefWidth="93.0" text="IP">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="7.0" />
-                           </VBox.margin>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.112-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ConnectController">
+    <center>
+        <VBox prefHeight="365.0" prefWidth="439.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="100.0" prefWidth="445.0">
+                    <children>
+                        <VBox id="label" prefHeight="100.0" prefWidth="62.0">
+                            <children>
+                                <Label prefHeight="39.0" prefWidth="93.0" text="IP">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets top="7.0" />
+                                    </VBox.margin>
+                                </Label>
+                                <Label prefHeight="40.0" prefWidth="93.0" text="PORT" textAlignment="RIGHT">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets top="6.0" />
+                                    </VBox.margin>
+                                </Label>
+                            </children>
+                        </VBox>
+                        <VBox id="textField" prefHeight="100.0" prefWidth="207.0">
+                            <children>
+                                <TextField id="ipTextField" fx:id="ipTextField" prefHeight="25.0" prefWidth="419.0" text="192.168.1.118">
+                                    <VBox.margin>
+                                        <Insets top="10.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <TextField id="portTextField" fx:id="portTextField" text="7777">
+                                    <VBox.margin>
+                                        <Insets top="10.0" />
+                                    </VBox.margin>
+                                </TextField>
+                            </children>
+                        </VBox>
+                        <VBox id="button" prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <Button id="connBtn" fx:id="connBtn" mnemonicParsing="false" onAction="#connectSocket" prefHeight="60.0" prefWidth="79.0" text="Connect">
+                                    <VBox.margin>
+                                        <Insets left="10.0" top="10.0" />
+                                    </VBox.margin>
+                                </Button>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label id="connResultLabel" fx:id="connResultLabel" prefHeight="35.0" prefWidth="356.0" textFill="RED">
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
                         </Label>
-                        <Label prefHeight="40.0" prefWidth="93.0" text="PORT" textAlignment="RIGHT">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets top="6.0" />
-                           </VBox.margin>
-                        </Label>
-                     </children>
-                  </VBox>
-                  <VBox id="textField" prefHeight="100.0" prefWidth="207.0">
-                     <children>
-                        <TextField id="ipTextField" fx:id="ipTextField" prefHeight="25.0" prefWidth="419.0">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </TextField>
-                        <TextField id="portTextField" fx:id="portTextField">
-                           <VBox.margin>
-                              <Insets top="10.0" />
-                           </VBox.margin>
-                        </TextField>
-                     </children>
-                  </VBox>
-                  <VBox id="button" prefHeight="200.0" prefWidth="100.0">
-                     <children>
-                        <Button id="connBtn" fx:id="connBtn" mnemonicParsing="false" onAction="#connectSocket" prefHeight="60.0" prefWidth="79.0" text="Connect">
-                           <VBox.margin>
-                              <Insets left="10.0" top="10.0" />
-                           </VBox.margin>
-                        </Button>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <VBox prefHeight="200.0" prefWidth="100.0">
-               <children>
-                  <Label id="connResultLabel" fx:id="connResultLabel" prefHeight="35.0" prefWidth="356.0" textFill="RED">
-                     <VBox.margin>
-                        <Insets top="10.0" />
-                     </VBox.margin>
-                  </Label>
-               </children>
-            </VBox>
-         </children>
-      </VBox>
-   </center>
-   <left>
-      <Pane prefHeight="396.0" prefWidth="161.0" BorderPane.alignment="CENTER" />
-   </left>
-   <top>
-      <Pane prefHeight="146.0" prefWidth="700.0" BorderPane.alignment="CENTER" />
-   </top>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+    <left>
+        <Pane prefHeight="396.0" prefWidth="161.0" BorderPane.alignment="CENTER" />
+    </left>
+    <top>
+        <Pane prefHeight="146.0" prefWidth="700.0" BorderPane.alignment="CENTER" />
+    </top>
 </BorderPane>

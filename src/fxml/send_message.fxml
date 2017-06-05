@@ -13,111 +13,144 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="backgroud" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SendMessageController">
-   <center>
-      <HBox prefHeight="343.0" prefWidth="651.0" BorderPane.alignment="CENTER">
-         <children>
-            <VBox prefHeight="343.0" prefWidth="699.0">
-               <children>
-                  <HBox prefHeight="270.0" prefWidth="689.0">
-                     <children>
-                        <VBox id="left_area" prefHeight="270.0" prefWidth="449.0">
-                           <children>
-                              <Label id="send_title" prefHeight="17.0" prefWidth="135.0" text="Send" textFill="#4400ff">
-                                 <VBox.margin>
-                                    <Insets left="5.0" />
-                                 </VBox.margin>
-                                 <font>
-                                    <Font size="19.0" />
-                                 </font>
-                              </Label>
-                              <ListView id="send_list" fx:id="sendMessageList" prefHeight="167.0" prefWidth="345.0">
-                                 <VBox.margin>
-                                    <Insets left="5.0" right="5.0" top="5.0" />
-                                 </VBox.margin>
-                              </ListView>
-                           </children>
-                        </VBox>
-                        <VBox id="right_area" prefHeight="250.0" prefWidth="439.0">
-                           <children>
-                              <Label id="receive_title" prefHeight="17.0" prefWidth="121.0" text="Receive" textFill="#b202b2">
-                                 <VBox.margin>
-                                    <Insets left="5.0" />
-                                 </VBox.margin>
-                                 <font>
-                                    <Font size="19.0" />
-                                 </font>
-                              </Label>
-                              <ListView id="receive_list" fx:id="receiveMessageList" prefHeight="166.0" prefWidth="335.0">
-                                 <VBox.margin>
-                                    <Insets left="5.0" right="5.0" top="5.0" />
-                                 </VBox.margin>
-                              </ListView>
-                           </children>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox id="button_area" prefHeight="196.0" prefWidth="699.0">
-                     <children>
-                        <VBox prefHeight="135.0" prefWidth="191.0">
-                           <children>
-                              <TextArea id="send_msg" fx:id="sendTextArea" prefHeight="38.0" prefWidth="225.0">
-                                 <VBox.margin>
-                                    <Insets left="5.0" />
-                                 </VBox.margin>
-                              </TextArea>
-                           </children>
-                        </VBox>
-                        <Button fx:id="sendBtn" mnemonicParsing="false" onAction="#sendMessage" prefHeight="25.0" prefWidth="68.0" text="Send">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
+<BorderPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.111"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SendMessageController">
+    <center>
+        <HBox prefHeight="343.0" prefWidth="651.0" BorderPane.alignment="CENTER">
+            <children>
+                <VBox prefHeight="343.0" prefWidth="699.0">
+                    <children>
+                        <HBox prefHeight="270.0" prefWidth="689.0">
+                            <children>
+                                <VBox id="left_area" prefHeight="270.0" prefWidth="449.0">
+                                    <children>
+                                        <Label id="send_title" prefHeight="17.0" prefWidth="135.0" text="Send"
+                                               textFill="#4400ff">
+                                            <VBox.margin>
+                                                <Insets left="5.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="19.0"/>
+                                            </font>
+                                        </Label>
+                                        <ListView id="send_list" fx:id="sendMessageList" prefHeight="167.0"
+                                                  prefWidth="345.0">
+                                            <VBox.margin>
+                                                <Insets left="5.0" right="5.0" top="5.0"/>
+                                            </VBox.margin>
+                                        </ListView>
+                                    </children>
+                                </VBox>
+                                <VBox id="right_area" prefHeight="250.0" prefWidth="439.0">
+                                    <children>
+                                        <Label id="receive_title" prefHeight="17.0" prefWidth="121.0" text="Receive"
+                                               textFill="#b202b2">
+                                            <VBox.margin>
+                                                <Insets left="5.0"/>
+                                            </VBox.margin>
+                                            <font>
+                                                <Font size="19.0"/>
+                                            </font>
+                                        </Label>
+                                        <ListView id="receive_list" fx:id="receiveMessageList" prefHeight="166.0"
+                                                  prefWidth="335.0">
+                                            <VBox.margin>
+                                                <Insets left="5.0" right="5.0" top="5.0"/>
+                                            </VBox.margin>
+                                        </ListView>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        <HBox id="button_area" prefHeight="196.0" prefWidth="699.0">
+                            <children>
+                                <VBox prefHeight="135.0" prefWidth="191.0">
+                                    <children>
+                                        <TextArea id="send_msg" fx:id="sendTextArea" prefHeight="38.0"
+                                                  prefWidth="225.0">
+                                            <VBox.margin>
+                                                <Insets left="5.0"/>
+                                            </VBox.margin>
+                                        </TextArea>
+                                    </children>
+                                </VBox>
+                                <Button fx:id="sendBtn" mnemonicParsing="false" onAction="#sendMessage"
+                                        prefHeight="25.0" prefWidth="68.0" text="Send">
+                                    <HBox.margin>
+                                        <Insets left="10.0"/>
+                                    </HBox.margin>
+                                </Button>
+                                <Pane id="empty" prefHeight="135.0" prefWidth="165.0">
+                                    <children>
+                                        <CheckBox fx:id="tallyCheckBox" layoutX="90.0" layoutY="1.0"
+                                                  mnemonicParsing="false" onAction="#setTallySignal" text="탈리신호"/>
+                                    </children>
+                                </Pane>
+                                <AnchorPane prefHeight="135.0" prefWidth="165.0">
+                                    <children>
+                                        <Button id="front_btn" fx:id="frontBtn" layoutX="9.0" layoutY="2.0"
+                                                mnemonicParsing="false" onMousePressed="#clickFrontBtn"
+                                                onMouseReleased="#clickInitBtn" prefHeight="35.0" prefWidth="35.0"
+                                                text="Q"/>
+                                        <Button id="up_btn" fx:id="upBtn" layoutX="54.0" layoutY="2.0"
+                                                mnemonicParsing="false" onMousePressed="#clickUpBtn"
+                                                onMouseReleased="#clickInitBtn" prefHeight="35.0" prefWidth="35.0"
+                                                text="W"/>
+                                        <Button id="back_btn" fx:id="backBtn" layoutX="98.0" layoutY="2.0"
+                                                mnemonicParsing="false" onMousePressed="#clickBackBtn"
+                                                onMouseReleased="#clickInitBtn" prefHeight="35.0" prefWidth="35.0"
+                                                text="R"/>
+                                        <Button id="left_btn" fx:id="leftBtn" layoutX="9.0" layoutY="46.0"
+                                                mnemonicParsing="false" onMousePressed="#clickLeftBtn"
+                                                onMouseReleased="#clickInitBtn" prefHeight="35.0" prefWidth="35.0"
+                                                text="A"/>
+                                        <Button id="init_btn" fx:id="initBtn" layoutX="54.0" layoutY="90.0"
+                                                mnemonicParsing="false" onMouseClicked="#clickInitBtn" prefHeight="35.0"
+                                                prefWidth="35.0"/>
+                                        <Button id="right_btn" fx:id="rightBtn" layoutX="98.0" layoutY="46.0"
+                                                mnemonicParsing="false" onMousePressed="#clickRightBtn"
+                                                onMouseReleased="#clickInitBtn" prefHeight="35.0" prefWidth="35.0"
+                                                text="D"/>
+                                        <Button id="down_btn" fx:id="downBtn" layoutX="54.0" layoutY="46.0"
+                                                mnemonicParsing="false" onMousePressed="#clickDownBtn"
+                                                onMouseReleased="#clickInitBtn" prefHeight="35.0" prefWidth="35.0"
+                                                text="S"/>
+                                        <Button layoutX="9.0" layoutY="90.0" mnemonicParsing="false" prefHeight="35.0"
+                                                prefWidth="35.0"/>
+                                        <Button layoutX="98.0" layoutY="90.0" mnemonicParsing="false" prefHeight="35.0"
+                                                prefWidth="35.0"/>
+                                    </children>
+                                </AnchorPane>
+                                <Label fx:id="guideLabel"/>
+                            </children>
+                        </HBox>
+                        <Pane id="empty" prefHeight="0.0" prefWidth="699.0"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </center>
+    <top>
+        <Pane prefHeight="57.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox prefHeight="56.0" prefWidth="700.0">
+                    <children>
+                        <Label id="title" fx:id="stateLabel" prefHeight="17.0" prefWidth="600.0" textAlignment="CENTER"
+                               textFill="RED">
+                            <padding>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+                            </padding>
+                        </Label>
+                        <Button fx:id="reconnectBtn" mnemonicParsing="false" onAction="#reconnectSocket"
+                                prefHeight="28.0" prefWidth="136.0" text="Button">
+                            <HBox.margin>
+                                <Insets right="5.0" top="5.0"/>
+                            </HBox.margin>
                         </Button>
-                        <Pane id="empty" prefHeight="135.0" prefWidth="165.0">
-                           <children>
-                              <CheckBox fx:id="tallyCheckBox" layoutX="90.0" layoutY="1.0" mnemonicParsing="false" onAction="#setTallySignal" text="탈리신호" />
-                           </children>
-                        </Pane>
-                        <AnchorPane prefHeight="135.0" prefWidth="165.0">
-                           <children>
-                              <Button id="front_btn" fx:id="frontBtn" layoutX="9.0" layoutY="2.0" mnemonicParsing="false" onMousePressed="#clickFrontBtn" onMouseReleased="#clickInitBtn" prefHeight="35.0" prefWidth="35.0" text="Q" />
-                              <Button id="up_btn" fx:id="upBtn" layoutX="54.0" layoutY="2.0" mnemonicParsing="false" onMousePressed="#clickUpBtn" onMouseReleased="#clickInitBtn" prefHeight="35.0" prefWidth="35.0" text="W" />
-                              <Button id="back_btn" fx:id="backBtn" layoutX="98.0" layoutY="2.0" mnemonicParsing="false" onMousePressed="#clickBackBtn" onMouseReleased="#clickInitBtn" prefHeight="35.0" prefWidth="35.0" text="R" />
-                              <Button id="left_btn" fx:id="leftBtn" layoutX="9.0" layoutY="46.0" mnemonicParsing="false" onMousePressed="#clickLeftBtn" onMouseReleased="#clickInitBtn" prefHeight="35.0" prefWidth="35.0" text="A" />
-                              <Button id="init_btn" fx:id="initBtn" layoutX="54.0" layoutY="90.0" mnemonicParsing="false" onMouseClicked="#clickInitBtn" prefHeight="35.0" prefWidth="35.0" />
-                              <Button id="right_btn" fx:id="rightBtn" layoutX="98.0" layoutY="46.0" mnemonicParsing="false" onMousePressed="#clickRightBtn" onMouseReleased="#clickInitBtn" prefHeight="35.0" prefWidth="35.0" text="D" />
-                              <Button id="down_btn" fx:id="downBtn" layoutX="54.0" layoutY="46.0" mnemonicParsing="false" onMousePressed="#clickDownBtn" onMouseReleased="#clickInitBtn" prefHeight="35.0" prefWidth="35.0" text="S" />
-                              <Button layoutX="9.0" layoutY="90.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" />
-                              <Button layoutX="98.0" layoutY="90.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" />
-                           </children>
-                        </AnchorPane>
-                        <Label fx:id="guideLabel" />
-                     </children>
-                  </HBox>
-                  <Pane id="empty" prefHeight="0.0" prefWidth="699.0" />
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-   </center>
-   <top>
-      <Pane prefHeight="57.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-         <children>
-            <HBox prefHeight="56.0" prefWidth="700.0">
-               <children>
-                  <Label id="title" fx:id="stateLabel" prefHeight="17.0" prefWidth="600.0" textAlignment="CENTER" textFill="RED">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                  </Label>
-                  <Button fx:id="reconnectBtn" mnemonicParsing="false" onAction="#reconnectSocket" prefHeight="28.0" prefWidth="136.0" text="Button">
-                     <HBox.margin>
-                        <Insets right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
-         </children>
-      </Pane>
-   </top>
+                    </children>
+                </HBox>
+            </children>
+        </Pane>
+    </top>
 </BorderPane>

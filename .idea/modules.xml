@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/camConsol.iml" filepath="$PROJECT_DIR$/camConsol.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CameraConsole.iml" filepath="$PROJECT_DIR$/CameraConsole.iml" />
     </modules>
   </component>
 </project>

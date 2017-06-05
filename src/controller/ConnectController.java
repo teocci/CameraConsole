@@ -2,18 +2,13 @@ package controller;
 
 import classes.main.Main;
 import classes.main.ServiceDiscovery;
-import classes.main.SocketConnect;
+import classes.main.SocketManager;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-
-import javax.jmdns.JmDNS;
-import javax.jmdns.ServiceEvent;
-import javax.jmdns.ServiceInfo;
-import javax.jmdns.ServiceTypeListener;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -21,51 +16,49 @@ import java.util.ResourceBundle;
 /**
  * Created by sol on 2017-05-24.
  */
-public class ConnectController implements Initializable {
+public class ConnectController implements Initializable
+{
 
-    @FXML TextField ipTextField;
-    @FXML TextField portTextField;
+    @FXML
+    TextField ipTextField;
+    @FXML
+    TextField portTextField;
     @FXML
     Label connResultLabel;
 
-    private Main main;
-    private Thread thread;
-    private SocketConnect socketConn;
+    private Main application;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
+    public void initialize(URL location, ResourceBundle resources)
+    {
     }
 
-
     /**
-     * Connect 버튼 클릭 이벤트
+     * Connect Button
      */
-    public void connectSocket() throws IOException {
+    public void connectSocket() throws IOException
+    {
         try {
-
-
-
-            // 입력한 IP, PORT 가 있으면 소켓 연결 시도
-            if ( !ipTextField.getText().equals("") && !portTextField.getText().equals("")) {
-                connResultLabel.setText("[" + ipTextField.getText() + "] 연결 시도");
+            // Attempt to connect socket if there is IP, PORT
+            if (!ipTextField.getText().equals("") && !portTextField.getText().equals("")) {
+                connResultLabel.setText("[" + ipTextField.getText() + "] Connection attempt");
 
                 String host = ipTextField.getText().toString();
                 int port = Integer.parseInt(portTextField.getText());
 
-                main.setHost(host);
-                main.setPort(port);
+                application.setHost(host);
+                application.setPort(port);
 
-                socketConn = new SocketConnect(main, host, port);
-                thread = new Thread(socketConn);
+                SocketManager socketManager = new SocketManager(application, host, port);
+                Thread thread = new Thread(socketManager);
                 thread.start();
-                main.setSocketConnect(socketConn);
+                application.setSocketManager(socketManager);
 
             } else {
-                connResultLabel.setText("IP 또는 PORT 를 입력하세요");
+                connResultLabel.setText("Please enter IP and PORT");
 
-                // 자동 탐색 테스트
-                String list[] = new String[] {
+                // Auto-search test
+                String list[] = new String[]{
                         "_http._tcp.local.",
                         "_ftp._tcp.local.",
                         "_tftp._tcp.local.",
@@ -83,44 +76,26 @@ public class ConnectController implements Initializable {
 
                 ServiceDiscovery serviceDiscovery = new ServiceDiscovery();
                 serviceDiscovery.main(list, this);
-
-
             }
-
-
-        } catch ( Exception e ) {
+        } catch (Exception e) {
             System.out.println(e.toString());
         }
     }
 
-
-    public void settingMain(Main main) {
-        this.main = main;
+    public void settingMain(Main main)
+    {
+        this.application = main;
     }
 
-    public void setConnResultLabel(Boolean b, String str) {
+    public void setConnResultLabel(Boolean b, String str)
+    {
+        Platform.runLater(() -> connResultLabel.setText(b ? "Connection succeeded." : "Try again."));
+    }
 
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-                // Socket 연결 성공
-                if ( b ) { connResultLabel.setText("연결 성공^0^"); }
-                // 연결 실패
-                else { connResultLabel.setText("다시 시도해주세요"); }
-            }
+    public void setConnectResult(String str)
+    {
+        Platform.runLater(() -> {
+            connResultLabel.setText(str);
         });
     }
-
-    String resultStr;
-    public void setConnectResult(String str) {
-        Platform.runLater(new Runnable() {
-            @Override
-            public void run() {
-             //   resultStr = str;
-             //   resultStr += str + "// \n";
-                connResultLabel.setText(str);
-            }
-        });
-    }
-
 }

@@ -10,30 +10,39 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane id="gridPane" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ConnectMainController">
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-   </rowConstraints>
-   <children>
-      <Pane id="connPane" fx:id="connPane" onKeyPressed="#keyPressed" prefHeight="400.0" prefWidth="700.0">
-         <children>
-            <TextField id="ipTextField" fx:id="ipTextField" layoutX="31.0" layoutY="26.0" promptText="IP" />
-            <TextField id="portTextField" fx:id="portTextField" layoutX="31.0" layoutY="58.0" promptText="PORT" />
-            <Button id="connectBtn" layoutX="195.0" layoutY="58.0" mnemonicParsing="false" onAction="#connectClient" text="Connect" />
-            <Label id="conStateLabel" fx:id="conStateLabel" layoutX="31.0" layoutY="97.0" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="238.0" textFill="RED" textOverrun="CLIP" />
-            <AnchorPane id="sendPane" fx:id="sendPane" layoutX="269.0" layoutY="209.0" prefHeight="17.0" prefWidth="209.0">
-               <children>
-                  <Button id="SendBtn" fx:id="SendBtn" layoutX="85.0" layoutY="140.0" mnemonicParsing="false" onAction="#sendText" text="Send" />
-                  <TextArea id="sendTextArea" fx:id="sendTextArea" layoutX="6.0" layoutY="11.0" prefHeight="120.0" prefWidth="201.0" />
-                  <Label id="resultLabel" fx:id="resultLabel" layoutX="216.0" layoutY="11.0" prefHeight="120.0" prefWidth="201.0" text="Keyboard Input Content" textOverrun="CLIP" wrapText="true" />
-                  <Button id="testBtn" layoutX="300.0" layoutY="140.0" mnemonicParsing="false" onAction="#clickTestBtn" text="Clear" />
-               </children>
-            </AnchorPane>
-         </children>
-      </Pane>
-   </children>
+<GridPane id="gridPane" alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.111"
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ConnectMainController">
+    <columnConstraints>
+        <ColumnConstraints/>
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints/>
+        <RowConstraints/>
+    </rowConstraints>
+    <children>
+        <Pane id="connPane" fx:id="connPane" onKeyPressed="#keyPressed" prefHeight="400.0" prefWidth="700.0">
+            <children>
+                <TextField id="ipTextField" fx:id="ipTextField" layoutX="31.0" layoutY="26.0" promptText="IP"/>
+                <TextField id="portTextField" fx:id="portTextField" layoutX="31.0" layoutY="58.0" promptText="PORT"/>
+                <Button id="connectBtn" layoutX="195.0" layoutY="58.0" mnemonicParsing="false" onAction="#connectClient"
+                        text="Connect"/>
+                <Label id="conStateLabel" fx:id="conStateLabel" layoutX="31.0" layoutY="97.0"
+                       maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="238.0" textFill="RED"
+                       textOverrun="CLIP"/>
+                <AnchorPane id="sendPane" fx:id="sendPane" layoutX="269.0" layoutY="209.0" prefHeight="17.0"
+                            prefWidth="209.0">
+                    <children>
+                        <Button id="SendBtn" fx:id="SendBtn" layoutX="85.0" layoutY="140.0" mnemonicParsing="false"
+                                onAction="#sendText" text="Send"/>
+                        <TextArea id="sendTextArea" fx:id="sendTextArea" layoutX="6.0" layoutY="11.0" prefHeight="120.0"
+                                  prefWidth="201.0"/>
+                        <Label id="resultLabel" fx:id="resultLabel" layoutX="216.0" layoutY="11.0" prefHeight="120.0"
+                               prefWidth="201.0" text="Keyboard Input Content" textOverrun="CLIP" wrapText="true"/>
+                        <Button id="testBtn" layoutX="300.0" layoutY="140.0" mnemonicParsing="false"
+                                onAction="#clickTestBtn" text="Clear"/>
+                    </children>
+                </AnchorPane>
+            </children>
+        </Pane>
+    </children>
 </GridPane>

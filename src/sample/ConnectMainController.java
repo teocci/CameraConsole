@@ -1,6 +1,6 @@
 package sample;
 
-import classes.main.SocketConnect;
+import classes.main.SocketManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -25,7 +25,7 @@ public class ConnectMainController implements Initializable {
     @FXML private AnchorPane sendPane;
 
     private Thread thread;
-    private SocketConnect socketConn;
+    private SocketManager socketConn;
     private String keyInfo = "";    // 입력된 키보드 문자 저장
 
     /**
@@ -44,7 +44,7 @@ public class ConnectMainController implements Initializable {
             String host = ipTextField.getText().toString(); //"192.168.1.208"
             int port = Integer.parseInt(portTextField.getText());
 
-            socketConn = new SocketConnect(null, host, port);
+            socketConn = new SocketManager(null, host, port);
       //      socketConn.setting(null, host, port, false);
 
             try {
