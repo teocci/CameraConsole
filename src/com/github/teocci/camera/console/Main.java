@@ -6,6 +6,7 @@ import com.github.teocci.camera.console.net.SocketManager;
 import com.github.teocci.camera.console.net.SocketManager;
 import com.github.teocci.camera.console.controllers.ConnectController;
 import com.github.teocci.camera.console.controllers.SendMessageController;
+import com.github.teocci.camera.console.util.Config;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -26,11 +27,11 @@ public class Main extends Application
     private ConnectController connectController;
     private SendMessageController sendMessageController;
 
-    // Socket 관련
+    // Socket
     private String host;
     private int port;
 
-    // Stage(Window) 관련
+    // Stage(Window)
     private ArrayList<Stage> stageArrayList = new ArrayList<>();
     private Stage primaryStage;
 
@@ -48,7 +49,7 @@ public class Main extends Application
     public void start(Stage stage) throws Exception
     {
         primaryStage = stage;
-        fxmlLoader = new FXMLLoader(getClass().getResource("/com/github/teocci/camera/console/views/connect_socket.fxml"));
+        fxmlLoader = new FXMLLoader(getClass().getResource(Config.VIEWS_DIR + "connect_socket.fxml"));
 
         try {
             Scene scene = new Scene(fxmlLoader.load(), 700, 400);
@@ -66,18 +67,18 @@ public class Main extends Application
     public void communicateSocket() throws IOException
     {
         Platform.runLater(() -> {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/github/teocci/camera/console/views/send_message.fxml"));
-                Scene sendScene = primaryStage.getScene();
-                try {
-                    sendScene.setRoot(fxmlLoader.load());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(Config.VIEWS_DIR + "send_message.fxml"));
+            Scene sendScene = primaryStage.getScene();
+            try {
+                sendScene.setRoot(fxmlLoader.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-                primaryStage.setScene(sendScene);
+            primaryStage.setScene(sendScene);
 
-                sendMessageController = fxmlLoader.getController();
-                sendMessageController.init(Main.this);
+            sendMessageController = fxmlLoader.getController();
+            sendMessageController.init(Main.this);
         });
     }
 
