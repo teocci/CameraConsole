@@ -1,4 +1,4 @@
-package com.github.teocci.net;
+package com.github.teocci.camera.console.net;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;

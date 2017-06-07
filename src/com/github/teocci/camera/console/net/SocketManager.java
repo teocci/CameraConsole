@@ -1,8 +1,10 @@
-package com.github.teocci.net;
+package com.github.teocci.camera.console.net;
 
-import com.github.teocci.Main;
-import com.github.teocci.controllers.ConnectController;
-import com.github.teocci.controllers.SendMessageController;
+import com.github.teocci.camera.console.Main;
+import com.github.teocci.camera.console.controllers.ConnectController;
+import com.github.teocci.camera.console.controllers.SendMessageController;
+import com.github.teocci.camera.console.controllers.ConnectController;
+import com.github.teocci.camera.console.controllers.SendMessageController;
 
 /**
  * Created by teocci.

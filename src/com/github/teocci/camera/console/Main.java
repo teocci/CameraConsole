@@ -1,8 +1,11 @@
-package com.github.teocci;
+package com.github.teocci.camera.console;
 
-import com.github.teocci.net.SocketManager;
-import com.github.teocci.controllers.ConnectController;
-import com.github.teocci.controllers.SendMessageController;
+import com.github.teocci.camera.console.controllers.ConnectController;
+import com.github.teocci.camera.console.controllers.SendMessageController;
+import com.github.teocci.camera.console.net.SocketManager;
+import com.github.teocci.camera.console.net.SocketManager;
+import com.github.teocci.camera.console.controllers.ConnectController;
+import com.github.teocci.camera.console.controllers.SendMessageController;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -45,7 +48,7 @@ public class Main extends Application
     public void start(Stage stage) throws Exception
     {
         primaryStage = stage;
-        fxmlLoader = new FXMLLoader(getClass().getResource("/com/github/teocci/views/connect_socket.fxml"));
+        fxmlLoader = new FXMLLoader(getClass().getResource("/com/github/teocci/camera/console/views/connect_socket.fxml"));
 
         try {
             Scene scene = new Scene(fxmlLoader.load(), 700, 400);
@@ -63,7 +66,7 @@ public class Main extends Application
     public void communicateSocket() throws IOException
     {
         Platform.runLater(() -> {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/github/teocci/views/send_message.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/github/teocci/camera/console/views/send_message.fxml"));
                 Scene sendScene = primaryStage.getScene();
                 try {
                     sendScene.setRoot(fxmlLoader.load());

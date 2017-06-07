@@ -1,4 +1,4 @@
-package com.github.teocci.util;
+package com.github.teocci.camera.console.util;
 
 /**
  * Created by teocci.

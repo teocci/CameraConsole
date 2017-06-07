@@ -1,6 +1,7 @@
-package com.github.teocci.net;
+package com.github.teocci.camera.console.net;
 
-import com.github.teocci.controllers.ConnectController;
+import com.github.teocci.camera.console.controllers.ConnectController;
+import com.github.teocci.camera.console.controllers.ConnectController;
 
 /**
  * Created by teocci.

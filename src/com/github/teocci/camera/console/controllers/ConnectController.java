@@ -1,8 +1,8 @@
-package com.github.teocci.controllers;
+package com.github.teocci.camera.console.controllers;
 
-import com.github.teocci.Main;
-import com.github.teocci.net.ServiceDiscovery;
-import com.github.teocci.net.SocketManager;
+import com.github.teocci.camera.console.Main;
+import com.github.teocci.camera.console.net.ServiceDiscovery;
+import com.github.teocci.camera.console.net.SocketManager;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

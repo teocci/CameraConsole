@@ -1,8 +1,8 @@
-package com.github.teocci.controllers;
+package com.github.teocci.camera.console.controllers;
 
-import com.github.teocci.Main;
-import com.github.teocci.net.SocketManager;
-import com.github.teocci.util.Debug;
+import com.github.teocci.camera.console.Main;
+import com.github.teocci.camera.console.net.SocketManager;
+import com.github.teocci.camera.console.util.Debug;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
@@ -18,8 +18,8 @@ import java.io.ByteArrayOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static com.github.teocci.controllers.SendMessageController.KeyOperator.LEFT_KEY;
-import static com.github.teocci.controllers.SendMessageController.KeyOperator.RIGHT_KEY;
+import static com.github.teocci.camera.console.controllers.SendMessageController.KeyOperator.LEFT_KEY;
+import static com.github.teocci.camera.console.controllers.SendMessageController.KeyOperator.RIGHT_KEY;
 
 /**
  * Created by teocci.
