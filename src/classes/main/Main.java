@@ -39,7 +39,7 @@ public class Main extends Application
     public void start(Stage stage) throws Exception
     {
         primaryStage = stage;
-        fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/connect_socket.fxml"));
+        fxmlLoader = new FXMLLoader(getClass().getResource("/views/connect_socket.fxml"));
 
         try {
             Scene scene = new Scene(fxmlLoader.load(), 700, 400);
@@ -57,7 +57,7 @@ public class Main extends Application
     public void communicateSocket() throws IOException
     {
         Platform.runLater(() -> {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/send_message.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/send_message.fxml"));
                 Scene sendScene = primaryStage.getScene();
                 try {
                     sendScene.setRoot(fxmlLoader.load());
