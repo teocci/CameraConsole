@@ -1,7 +1,6 @@
 package com.github.teocci.camera.console.controllers;
 
 import com.github.teocci.camera.console.Main;
-import com.github.teocci.camera.console.net.ServiceDiscovery;
 import com.github.teocci.camera.console.net.SocketManager;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -35,9 +34,6 @@ public class ConnectController implements Initializable
     {
     }
 
-    /**
-     * Connect Button
-     */
     public void connectSocket() throws IOException
     {
         try {
@@ -45,7 +41,7 @@ public class ConnectController implements Initializable
             if (!ipTextField.getText().equals("") && !portTextField.getText().equals("")) {
                 connResultLabel.setText("[" + ipTextField.getText() + "] Connection attempt");
 
-                String host = ipTextField.getText().toString();
+                String host = ipTextField.getText();
                 int port = Integer.parseInt(portTextField.getText());
 
                 application.setHost(host);
@@ -58,26 +54,6 @@ public class ConnectController implements Initializable
 
             } else {
                 connResultLabel.setText("Please enter IP and PORT");
-
-                // Auto-search test
-                String list[] = new String[]{
-                        "_http._tcp.local.",
-                        "_ftp._tcp.local.",
-                        "_tftp._tcp.local.",
-                        "_ssh._tcp.local.",
-                        "_smb._tcp.local.",
-                        "_printer._tcp.local.",
-                        "_airport._tcp.local.",
-                        "_afpovertcp._tcp.local.",
-                        "_ichat._tcp.local.",
-                        "_eppc._tcp.local.",
-                        "_presence._tcp.local.",
-                        "_zookeeper._tcp.local.",
-                        "_test._tcp.local."
-                };
-
-                ServiceDiscovery serviceDiscovery = new ServiceDiscovery();
-                serviceDiscovery.main(list, this);
             }
         } catch (Exception e) {
             System.out.println(e.toString());
