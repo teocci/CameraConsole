@@ -1,7 +1,8 @@
-package classes.main;
+package com.github.teocci;
 
-import controller.ConnectController;
-import controller.SendMessageController;
+import com.github.teocci.net.SocketManager;
+import com.github.teocci.controllers.ConnectController;
+import com.github.teocci.controllers.SendMessageController;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Created by teocci.
+ *
+ * @author teocci@yandex.com on 2017-May-19
+ */
 public class Main extends Application
 {
     private SocketManager socketManager;
@@ -39,7 +45,7 @@ public class Main extends Application
     public void start(Stage stage) throws Exception
     {
         primaryStage = stage;
-        fxmlLoader = new FXMLLoader(getClass().getResource("/views/connect_socket.fxml"));
+        fxmlLoader = new FXMLLoader(getClass().getResource("/com/github/teocci/views/connect_socket.fxml"));
 
         try {
             Scene scene = new Scene(fxmlLoader.load(), 700, 400);
@@ -50,14 +56,14 @@ public class Main extends Application
             System.out.println(e.toString());
         }
 
-        primaryStage.setTitle("흑... 악마같은놈");
+        primaryStage.setTitle("Camera Console");
         primaryStage.show();
     }
 
     public void communicateSocket() throws IOException
     {
         Platform.runLater(() -> {
-                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/send_message.fxml"));
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/github/teocci/views/send_message.fxml"));
                 Scene sendScene = primaryStage.getScene();
                 try {
                     sendScene.setRoot(fxmlLoader.load());

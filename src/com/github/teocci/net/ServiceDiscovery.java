@@ -1,11 +1,11 @@
-package classes.main;
+package com.github.teocci.net;
 
-import controller.ConnectController;
+import com.github.teocci.controllers.ConnectController;
 
 /**
- * Created by sol on 2017-05-26.
- * <p>
- * ServiceDiscovery
+ * Created by teocci.
+ *
+ * @author teocci@yandex.com on 2017-May-19
  */
 public class ServiceDiscovery
 {

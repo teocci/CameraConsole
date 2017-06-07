@@ -1,4 +1,4 @@
-package classes.core;
+package com.github.teocci.net;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -7,9 +7,11 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 
 /**
- * Created by sol on 2017-05-19.
+ * Created by teocci.
  * <p>
  * BaseCore
+ *
+ * @author teocci@yandex.com on 2017-May-19
  */
 public abstract class BaseCore
 {

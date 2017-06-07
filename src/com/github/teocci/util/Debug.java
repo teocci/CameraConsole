@@ -1,7 +1,9 @@
-package classes.util;
+package com.github.teocci.util;
 
 /**
- * Created by sol on 2017-05-25.
+ * Created by teocci.
+ *
+ * @author teocci@yandex.com on 2017-May-19
  */
 public class Debug {
 

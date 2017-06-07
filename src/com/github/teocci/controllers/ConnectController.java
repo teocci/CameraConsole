@@ -1,8 +1,8 @@
-package controller;
+package com.github.teocci.controllers;
 
-import classes.main.Main;
-import classes.main.ServiceDiscovery;
-import classes.main.SocketManager;
+import com.github.teocci.Main;
+import com.github.teocci.net.ServiceDiscovery;
+import com.github.teocci.net.SocketManager;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,7 +14,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Created by sol on 2017-05-24.
+ * Created by teocci.
+ *
+ * @author teocci@yandex.com on 2017-May-19
  */
 public class ConnectController implements Initializable
 {

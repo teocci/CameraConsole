@@ -1,8 +1,8 @@
-package controller;
+package com.github.teocci.controllers;
 
-import classes.main.Main;
-import classes.main.SocketManager;
-import classes.util.Debug;
+import com.github.teocci.Main;
+import com.github.teocci.net.SocketManager;
+import com.github.teocci.util.Debug;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
@@ -18,13 +18,13 @@ import java.io.ByteArrayOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static controller.SendMessageController.KeyOperator.LEFT_KEY;
-import static controller.SendMessageController.KeyOperator.RIGHT_KEY;
+import static com.github.teocci.controllers.SendMessageController.KeyOperator.LEFT_KEY;
+import static com.github.teocci.controllers.SendMessageController.KeyOperator.RIGHT_KEY;
 
 /**
- * Created by sol on 2017-05-24.
- * <p>
- * SendMessageController
+ * Created by teocci.
+ *
+ * @author teocci@yandex.com on 2017-May-19
  */
 public class SendMessageController implements Initializable
 {
@@ -282,14 +282,14 @@ public class SendMessageController implements Initializable
         if (type.equals("LEFT") || type.equals("A")) {
             leftBtn.setEffect(new InnerShadow());    // Effect when the button is pressed
 
-            tmpX = String.valueOf(initPos - deltaPosition*10);
+            tmpX = String.valueOf(initPos - deltaPosition * 10);
             if (Integer.parseInt(tmpX) < CENTER_VALUE - MAX_RANGE_VALUE) {
                 tmpX = "" + (CENTER_VALUE - MAX_RANGE_VALUE);
                 stateLabel.setText("minimum x value...");
             } else stateLabel.setText("");
         } else if (type.equals("RIGHT") || type.equals("D")) {
             rightBtn.setEffect(new InnerShadow());
-            tmpX = String.valueOf(initPos + deltaPosition*10);
+            tmpX = String.valueOf(initPos + deltaPosition * 10);
             if (Integer.parseInt(tmpX) > CENTER_VALUE + MAX_RANGE_VALUE) {
                 tmpX = "" + (CENTER_VALUE + MAX_RANGE_VALUE);
                 stateLabel.setText("Maximum x value...");

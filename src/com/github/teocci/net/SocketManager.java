@@ -1,13 +1,13 @@
-package classes.main;
+package com.github.teocci.net;
 
-import classes.core.BaseCore;
-import controller.ConnectController;
-import controller.SendMessageController;
+import com.github.teocci.Main;
+import com.github.teocci.controllers.ConnectController;
+import com.github.teocci.controllers.SendMessageController;
 
 /**
- * Created by sol on 2017-05-19.
- * <p>
- * SocketManager
+ * Created by teocci.
+ *
+ * @author teocci@yandex.com on 2017-May-19
  */
 public class SocketManager extends BaseCore implements Runnable
 {
